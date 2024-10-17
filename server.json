@@ -1,0 +1,624 @@
+{
+  "user": [
+    {
+      "id": 1,
+      "name": "John Doe",
+      "email": "john.doe@example.com",
+      "role": "Admin",
+      "status": "Active"
+    },
+    {
+      "id": 2,
+      "name": "Jane Smith",
+      "email": "jane.smith@example.com",
+      "role": "User",
+      "status": "Inactive"
+    },
+    {
+      "id": 3,
+      "name": "Michael Johnson",
+      "email": "michael.johnson@example.com",
+      "role": "User",
+      "status": "Active"
+    },
+    {
+      "id": 4,
+      "name": "Emily Davis",
+      "email": "emily.davis@example.com",
+      "role": "User",
+      "status": "Inactive"
+    },
+    {
+      "id": 5,
+      "name": "William Brown",
+      "email": "william.brown@example.com",
+      "role": "Admin",
+      "status": "Active"
+    },
+    {
+      "id": 6,
+      "name": "Jessica Wilson",
+      "email": "jessica.wilson@example.com",
+      "role": "User",
+      "status": "Active"
+    },
+    {
+      "id": 7,
+      "name": "Daniel Martinez",
+      "email": "daniel.martinez@example.com",
+      "role": "User",
+      "status": "Inactive"
+    },
+    {
+      "id": 8,
+      "name": "Sophia Garcia",
+      "email": "sophia.garcia@example.com",
+      "role": "Admin",
+      "status": "Active"
+    },
+    {
+      "id": 9,
+      "name": "James Rodriguez",
+      "email": "james.rodriguez@example.com",
+      "role": "User",
+      "status": "Active"
+    },
+    {
+      "id": 10,
+      "name": "Olivia Lee",
+      "email": "olivia.lee@example.com",
+      "role": "User",
+      "status": "Inactive"
+    },
+    {
+      "id": 11,
+      "name": "David Anderson",
+      "email": "david.anderson@example.com",
+      "role": "User",
+      "status": "Active"
+    },
+    {
+      "id": 12,
+      "name": "Isabella Thomas",
+      "email": "isabella.thomas@example.com",
+      "role": "Admin",
+      "status": "Inactive"
+    },
+    {
+      "id": 13,
+      "name": "Lucas Taylor",
+      "email": "lucas.taylor@example.com",
+      "role": "User",
+      "status": "Active"
+    },
+    {
+      "id": 14,
+      "name": "Mia Harris",
+      "email": "mia.harris@example.com",
+      "role": "User",
+      "status": "Inactive"
+    },
+    {
+      "id": 15,
+      "name": "Ethan Clark",
+      "email": "ethan.clark@example.com",
+      "role": "User",
+      "status": "Active"
+    },
+    {
+      "id": 16,
+      "name": "Ava Robinson",
+      "email": "ava.robinson@example.com",
+      "role": "Admin",
+      "status": "Active"
+    },
+    {
+      "id": 17,
+      "name": "Alexander Lewis",
+      "email": "alexander.lewis@example.com",
+      "role": "User",
+      "status": "Inactive"
+    },
+    {
+      "id": 18,
+      "name": "Charlotte Walker",
+      "email": "charlotte.walker@example.com",
+      "role": "User",
+      "status": "Active"
+    },
+    {
+      "id": 19,
+      "name": "Benjamin Hall",
+      "email": "benjamin.hall@example.com",
+      "role": "User",
+      "status": "Inactive"
+    },
+    {
+      "id": 20,
+      "name": "Amelia Young",
+      "email": "amelia.young@example.com",
+      "role": "Admin",
+      "status": "Active"
+    }
+  ],
+  "product": [
+    {
+      "id": 1,
+      "name": "Laptop",
+      "category": "Electronics",
+      "price": 1200.00,
+      "stock": 30
+    },
+    {
+      "id": 2,
+      "name": "Smartphone",
+      "category": "Electronics",
+      "price": 800.00,
+      "stock": 50
+    },
+    {
+      "id": 3,
+      "name": "Tablet",
+      "category": "Electronics",
+      "price": 600.00,
+      "stock": 25
+    },
+    {
+      "id": 4,
+      "name": "Smartwatch",
+      "category": "Electronics",
+      "price": 250.00,
+      "stock": 40
+    },
+    {
+      "id": 5,
+      "name": "Headphones",
+      "category": "Accessories",
+      "price": 150.00,
+      "stock": 100
+    },
+    {
+      "id": 6,
+      "name": "Bluetooth Speaker",
+      "category": "Accessories",
+      "price": 200.00,
+      "stock": 60
+    },
+    {
+      "id": 7,
+      "name": "Monitor",
+      "category": "Electronics",
+      "price": 300.00,
+      "stock": 20
+    },
+    {
+      "id": 8,
+      "name": "Keyboard",
+      "category": "Accessories",
+      "price": 80.00,
+      "stock": 75
+    },
+    {
+      "id": 9,
+      "name": "Mouse",
+      "category": "Accessories",
+      "price": 50.00,
+      "stock": 90
+    },
+    {
+      "id": 10,
+      "name": "Desktop PC",
+      "category": "Electronics",
+      "price": 1500.00,
+      "stock": 15
+    },
+    {
+      "id": 11,
+      "name": "External Hard Drive",
+      "category": "Storage",
+      "price": 120.00,
+      "stock": 40
+    },
+    {
+      "id": 12,
+      "name": "SSD",
+      "category": "Storage",
+      "price": 200.00,
+      "stock": 35
+    },
+    {
+      "id": 13,
+      "name": "Router",
+      "category": "Networking",
+      "price": 100.00,
+      "stock": 45
+    },
+    {
+      "id": 14,
+      "name": "Gaming Chair",
+      "category": "Furniture",
+      "price": 300.00,
+      "stock": 10
+    },
+    {
+      "id": 15,
+      "name": "Webcam",
+      "category": "Accessories",
+      "price": 100.00,
+      "stock": 50
+    },
+    {
+      "id": 16,
+      "name": "Graphics Card",
+      "category": "Electronics",
+      "price": 800.00,
+      "stock": 5
+    },
+    {
+      "id": 17,
+      "name": "Laptop Stand",
+      "category": "Accessories",
+      "price": 40.00,
+      "stock": 80
+    },
+    {
+      "id": 18,
+      "name": "USB Hub",
+      "category": "Accessories",
+      "price": 25.00,
+      "stock": 70
+    },
+    {
+      "id": 19,
+      "name": "Phone Case",
+      "category": "Accessories",
+      "price": 20.00,
+      "stock": 150
+    },
+    {
+      "id": 20,
+      "name": "Power Bank",
+      "category": "Accessories",
+      "price": 30.00,
+      "stock": 120
+    }
+  ],
+  "order": [
+    {
+      "id": 1,
+      "user_id": 1,
+      "product_id": 2,
+      "date": "2024-10-01",
+      "quantity": 2,
+      "total_price": 1600.00
+    },
+    {
+      "id": 2,
+      "user_id": 2,
+      "product_id": 1,
+      "date": "2024-09-30",
+      "quantity": 1,
+      "total_price": 1200.00
+    },
+    {
+      "id": 3,
+      "user_id": 3,
+      "product_id": 3,
+      "date": "2024-10-02",
+      "quantity": 1,
+      "total_price": 600.00
+    },
+    {
+      "id": 4,
+      "user_id": 4,
+      "product_id": 4,
+      "date": "2024-10-03",
+      "quantity": 3,
+      "total_price": 750.00
+    },
+    {
+      "id": 5,
+      "user_id": 5,
+      "product_id": 5,
+      "date": "2024-10-04",
+      "quantity": 2,
+      "total_price": 300.00
+    },
+    {
+      "id": 6,
+      "user_id": 6,
+      "product_id": 6,
+      "date": "2024-10-05",
+      "quantity": 1,
+      "total_price": 200.00
+    },
+    {
+      "id": 7,
+      "user_id": 7,
+      "product_id": 7,
+      "date": "2024-10-06",
+      "quantity": 1,
+      "total_price": 300.00
+    },
+    {
+      "id": 8,
+      "user_id": 8,
+      "product_id": 8,
+      "date": "2024-10-07",
+      "quantity": 5,
+      "total_price": 400.00
+    },
+    {
+      "id": 9,
+      "user_id": 9,
+      "product_id": 9,
+      "date": "2024-10-08",
+      "quantity": 4,
+      "total_price": 200.00
+    },
+    {
+      "id": 10,
+      "user_id": 10,
+      "product_id": 10,
+      "date": "2024-10-09",
+      "quantity": 1,
+      "total_price": 1500.00
+    },
+    {
+      "id": 11,
+      "user_id": 11,
+      "product_id": 11,
+      "date": "2024-10-10",
+      "quantity": 1,
+      "total_price": 120.00
+    },
+    {
+      "id": 12,
+      "user_id": 12,
+      "product_id": 12,
+      "date": "2024-10-11",
+      "quantity": 2,
+      "total_price": 400.00
+    },
+    {
+      "id": 13,
+      "user_id": 13,
+      "product_id": 13,
+      "date": "2024-10-12",
+      "quantity": 1,
+      "total_price": 100.00
+    },
+    {
+      "id": 14,
+      "user_id": 14,
+      "product_id": 14,
+      "date": "2024-10-13",
+      "quantity": 2,
+      "total_price": 600.00
+    },
+    {
+      "id": 15,
+      "user_id": 15,
+      "product_id": 15,
+      "date": "2024-10-14",
+      "quantity": 3,
+      "total_price": 300.00
+    },
+    {
+      "id": 16,
+      "user_id": 16,
+      "product_id": 16,
+      "date": "2024-10-15",
+      "quantity": 1,
+      "total_price": 800.00
+    },
+    {
+      "id": 17,
+      "user_id": 17,
+      "product_id": 17,
+      "date": "2024-10-16",
+      "quantity": 2,
+      "total_price": 80.00
+    },
+    {
+      "id": 18,
+      "user_id": 18,
+      "product_id": 18,
+      "date": "2024-10-17",
+      "quantity": 1,
+      "total_price": 30.00
+    },
+    {
+      "id": 19,
+      "user_id": 19,
+      "product_id": 19,
+      "date": "2024-10-18",
+      "quantity": 3,
+      "total_price": 60.00
+    },
+    {
+      "id": 20,
+      "user_id": 20,
+      "product_id": 20,
+      "date": "2024-10-19",
+      "quantity": 2,
+      "total_price": 60.00
+    },
+    {
+      "id": 21,
+      "user_id": 1,
+      "product_id": 1,
+      "date": "2024-10-20",
+      "quantity": 1,
+      "total_price": 1200.00
+    },
+    {
+      "id": 22,
+      "user_id": 2,
+      "product_id": 2,
+      "date": "2024-10-21",
+      "quantity": 2,
+      "total_price": 1600.00
+    },
+    {
+      "id": 23,
+      "user_id": 3,
+      "product_id": 3,
+      "date": "2024-10-22",
+      "quantity": 2,
+      "total_price": 1200.00
+    },
+    {
+      "id": 24,
+      "user_id": 4,
+      "product_id": 4,
+      "date": "2024-10-23",
+      "quantity": 1,
+      "total_price": 250.00
+    },
+    {
+      "id": 25,
+      "user_id": 5,
+      "product_id": 5,
+      "date": "2024-10-24",
+      "quantity": 3,
+      "total_price": 450.00
+    },
+    {
+      "id": 26,
+      "user_id": 6,
+      "product_id": 6,
+      "date": "2024-10-25",
+      "quantity": 4,
+      "total_price": 800.00
+    },
+    {
+      "id": 27,
+      "user_id": 7,
+      "product_id": 7,
+      "date": "2024-10-26",
+      "quantity": 2,
+      "total_price": 600.00
+    },
+    {
+      "id": 28,
+      "user_id": 8,
+      "product_id": 8,
+      "date": "2024-10-27",
+      "quantity": 1,
+      "total_price": 80.00
+    },
+    {
+      "id": 29,
+      "user_id": 9,
+      "product_id": 9,
+      "date": "2024-10-28",
+      "quantity": 2,
+      "total_price": 100.00
+    },
+    {
+      "id": 30,
+      "user_id": 10,
+      "product_id": 10,
+      "date": "2024-10-29",
+      "quantity": 2,
+      "total_price": 3000.00
+    },
+    {
+      "id": 31,
+      "user_id": 11,
+      "product_id": 11,
+      "date": "2024-10-30",
+      "quantity": 3,
+      "total_price": 360.00
+    },
+    {
+      "id": 32,
+      "user_id": 12,
+      "product_id": 12,
+      "date": "2024-10-31",
+      "quantity": 1,
+      "total_price": 200.00
+    },
+    {
+      "id": 33,
+      "user_id": 13,
+      "product_id": 13,
+      "date": "2024-11-01",
+      "quantity": 5,
+      "total_price": 500.00
+    },
+    {
+      "id": 34,
+      "user_id": 14,
+      "product_id": 14,
+      "date": "2024-11-02",
+      "quantity": 1,
+      "total_price": 300.00
+    },
+    {
+      "id": 35,
+      "user_id": 15,
+      "product_id": 15,
+      "date": "2024-11-03",
+      "quantity": 2,
+      "total_price": 200.00
+    },
+    {
+      "id": 36,
+      "user_id": 16,
+      "product_id": 16,
+      "date": "2024-11-04",
+      "quantity": 1,
+      "total_price": 800.00
+    },
+    {
+      "id": 37,
+      "user_id": 17,
+      "product_id": 17,
+      "date": "2024-11-05",
+      "quantity": 2,
+      "total_price": 80.00
+    },
+    {
+      "id": 38,
+      "user_id": 18,
+      "product_id": 18,
+      "date": "2024-11-06",
+      "quantity": 1,
+      "total_price": 30.00
+    },
+    {
+      "id": 39,
+      "user_id": 19,
+      "product_id": 19,
+      "date": "2024-11-07",
+      "quantity": 3,
+      "total_price": 60.00
+    },
+    {
+      "id": 40,
+      "user_id": 20,
+      "product_id": 20,
+      "date": "2024-11-08",
+      "quantity": 2,
+      "total_price": 60.00
+    }
+  ],
+  "task": [
+    {
+      "id": 1,
+      "title": "Update software",
+      "assigned_to": "John Doe",
+      "status": "In Progress",
+      "due_date": "2024-10-05"
+    },
+    {
+      "id": 2,
+      "title": "Prepare sales report",
+      "assigned_to": "Jane Smith",
+      "status": "Completed",
+      "due_date": "2024-10-02"
+    }
+  ]
+}
