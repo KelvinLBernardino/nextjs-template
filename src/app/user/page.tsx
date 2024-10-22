@@ -7,7 +7,7 @@ import { FaTrash, FaEdit } from 'react-icons/fa'
 import Sidebar from '@/components/Sidebar'
 import Table from '@/components/Table'
 import { useModal } from '@/context/ModalContext'
-import { getUsers } from '@/services/userService'
+import { getUsers, deleteUser } from '@/services/userService'
 import { UserType } from '@/types/pages/userTypes'
 import { msgError } from '@/utils/functions'
 
@@ -50,16 +50,34 @@ const Users = () => {
   const handleCreate = () => {
     setType('create')
     setControl(1)
-    console.log('Create user')
   }
 
-  const handleEdit = (user: UserType) => {
-    setSelectedData(user)
-    console.log('Edit user:', user)
+  const handleEdit = (row: UserType) => {
+    setSelectedData(row)
+    setType('update')
+    setControl(1)
   }
 
-  const handleDelete = (user: UserType) => {
-    console.log('Delete user:', user)
+  const handleDelete = (row: UserType) => {
+    ModalContext.showConfirm(
+      'Tem certeza que deseja deletar esse usário?',
+      () => onDeleteConfirm(row.id),
+    )
+  }
+
+  const onDeleteConfirm = async (uuid: string) => {
+    try {
+      ModalContext.showLoading()
+      await deleteUser(uuid)
+
+      ModalContext.hideLoading()
+      ModalContext.showSuccess('Usuário excluído com sucesso!', loadData)
+    } catch (error) {
+      const dataMessage = msgError(error)
+
+      ModalContext.hideLoading()
+      ModalContext.showError(dataMessage.message)
+    }
   }
 
   const ActionButtons = [
@@ -100,7 +118,7 @@ const Users = () => {
               columns={columns}
               rows={rows}
               ariaLabel="Tabela de Usuários"
-              refreshData={() => {}}
+              refreshData={loadData}
               menuAction={ActionButtons}
             />
           </div>
@@ -109,7 +127,8 @@ const Users = () => {
         <UserForm
           type={type}
           setControl={setControl}
-          editUser={selectedData || null}
+          editRow={selectedData || null}
+          loadData={loadData}
         />
       )}
     </div>

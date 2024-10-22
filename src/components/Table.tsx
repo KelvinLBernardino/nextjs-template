@@ -323,12 +323,14 @@ const Table = <T,>(props: TableProps<T>): JSX.Element => {
               </caption>
               <thead>
                 <tr>
-                  <th
-                    scope="col"
-                    className="px-6 py-3 bg-gray-600 text-sm text-white uppercase"
-                  >
-                    Ações
-                  </th>
+                  {props?.menuAction && props.menuAction.length > 0 && (
+                    <th
+                      scope="col"
+                      className="px-6 py-3 bg-gray-600 text-sm text-white uppercase"
+                    >
+                      Ações
+                    </th>
+                  )}
                   {columns.map(
                     (column) =>
                       column.visible === true && (

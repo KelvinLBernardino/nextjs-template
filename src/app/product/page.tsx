@@ -7,7 +7,7 @@ import { FaTrash, FaEdit } from 'react-icons/fa'
 import Sidebar from '@/components/Sidebar'
 import Table from '@/components/Table'
 import { useModal } from '@/context/ModalContext'
-import { getProducts } from '@/services/productService'
+import { getProducts, deleteProduct } from '@/services/productService'
 import { ProductType } from '@/types/pages/productTypes'
 import { msgError } from '@/utils/functions'
 
@@ -53,13 +53,31 @@ const Users = () => {
     console.log('Create product')
   }
 
-  const handleEdit = (product: ProductType) => {
-    setSelectedData(product)
-    console.log('Edit product:', product)
+  const handleEdit = (row: ProductType) => {
+    setSelectedData(row)
+    console.log('Edit product:', row)
   }
 
-  const handleDelete = (product: ProductType) => {
-    console.log('Delete product:', product)
+  const handleDelete = (row: ProductType) => {
+    ModalContext.showConfirm(
+      'Tem certeza que deseja deletar esse usário?',
+      () => onDeleteConfirm(row.id),
+    )
+  }
+
+  const onDeleteConfirm = async (uuid: string) => {
+    try {
+      ModalContext.showLoading()
+      await deleteProduct(uuid)
+
+      ModalContext.hideLoading()
+      ModalContext.showSuccess('Usuário excluído com sucesso!', loadData)
+    } catch (error) {
+      const dataMessage = msgError(error)
+
+      ModalContext.hideLoading()
+      ModalContext.showError(dataMessage.message)
+    }
   }
 
   const ActionButtons = [
@@ -100,7 +118,7 @@ const Users = () => {
               columns={columns}
               rows={rows}
               ariaLabel="Tabela de Usuários"
-              refreshData={() => {}}
+              refreshData={loadData}
               menuAction={ActionButtons}
             />
           </div>
@@ -109,7 +127,8 @@ const Users = () => {
         <UserForm
           type={type}
           setControl={setControl}
-          editUser={selectedData || null}
+          editRow={selectedData || null}
+          loadData={loadData}
         />
       )}
     </div>

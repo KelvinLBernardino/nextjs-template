@@ -1,58 +1,95 @@
 'use client'
 
-import React, { ReactElement, useState } from 'react'
+import React, { ReactElement, useEffect, useState } from 'react'
 import { useForm, SubmitHandler } from 'react-hook-form'
-import LoadingButton from '@/components/custom/LoadingButton'
 
-import {
-  // User,
-  UserFormInputs,
-  UserFormProps,
-} from '@/types/pages/userTypes'
+import { useModal } from '@/context/ModalContext'
+import { createUser, updateUser } from '@/services/userService'
+import { msgError, getDifferences } from '@/utils/functions'
+import { UserType, UserFormProps } from '@/types/pages/userTypes'
 
-/**
- * A component that renders a form to create a new user.
- *
- * @param {UserFormProps} props - The props object passed to the component.
- * @return {ReactElement} The rendered UserForm component.
- */
 export const UserForm: React.FC<UserFormProps> = (
   props: UserFormProps,
 ): ReactElement => {
-  const [isLoading, setIsLoading] = useState<boolean>(false)
+  const [uuid, setUuid] = useState<string>('')
 
-  // Initialize the React Hook Form
+  const ModalContext = useModal()
+
   const {
     register,
     reset,
+    setValue,
     handleSubmit,
     formState: { errors },
-  } = useForm<UserFormInputs>()
+  } = useForm<UserType>()
 
-  /**
-   * Handles the cancel button click event.
-   *
-   * This function is called when the cancel button is clicked.
-   * It sets the control state to 0, which triggers the login form to be displayed.
-   */
   const handleCancel = (): void => {
-    // Reset the form to its initial state
     reset()
-    // Set the control state to 0 to trigger the login form to be displayed
     props.setControl(0)
   }
 
-  /**
-   * Handles the submit button click event.
-   *
-   * This function is called when the submit button is clicked.
-   * It sets the loading state to false and logs the form data to the console.
-   * You can add the logic to submit the form to an API here.
-   */
-  const onSubmit: SubmitHandler<UserFormInputs> = (data) => {
-    setIsLoading(false)
-    console.log('Form Data:', data)
+  const handleConfirm = (): void => {
+    reset()
+    props.loadData()
+    props.setControl(0)
   }
+
+  const onSubmit: SubmitHandler<UserType> = async (data) => {
+    if (props.type === 'create') {
+      try {
+        ModalContext.showLoading()
+        await createUser(data)
+
+        ModalContext.hideLoading()
+        ModalContext.showSuccess('Usuário criado com sucesso!', handleConfirm)
+      } catch (error) {
+        const dataMessage = msgError(error)
+
+        ModalContext.hideLoading()
+        ModalContext.showError(dataMessage.message)
+      }
+    } else if (props.type === 'update') {
+      const differences = getDifferences(
+        props.editRow as Partial<UserType>,
+        data,
+      )
+      if (Object.keys(differences).length > 0) {
+        try {
+          ModalContext.showLoading()
+          await updateUser(uuid, differences)
+
+          ModalContext.hideLoading()
+          ModalContext.showSuccess(
+            'Usuário editado com sucesso!',
+            handleConfirm,
+          )
+        } catch (error) {
+          const dataMessage = msgError(error)
+
+          ModalContext.hideLoading()
+          ModalContext.showError(dataMessage.message)
+        }
+      }
+    }
+  }
+
+  useEffect(() => {
+    if (props.type === 'update') {
+      setValue('name', props.editRow?.name || '')
+      setValue('email', props.editRow?.email || '')
+      setValue('role', props.editRow?.role || '')
+      setValue('status', props.editRow?.status || '')
+      setUuid(props.editRow?.id || '')
+    }
+  }, [
+    props.editRow?.email,
+    props.editRow?.id,
+    props.editRow?.name,
+    props.editRow?.role,
+    props.editRow?.status,
+    props.type,
+    setValue,
+  ])
 
   return (
     <form
@@ -197,15 +234,14 @@ export const UserForm: React.FC<UserFormProps> = (
         >
           Cancelar
         </button>
-        <LoadingButton
+        <button
           type="submit"
           className="w-40 rounded-md bg-black px-4 py-2 text-sm font-medium text-white shadow-md transition 
                   duration-150 hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-secondary focus:ring-offset-2"
           aria-label="Entrar"
-          isLoading={isLoading}
         >
-          Criar
-        </LoadingButton>
+          {props.type === 'create' ? 'Criar' : 'Salvar'}
+        </button>
       </div>
     </form>
   )

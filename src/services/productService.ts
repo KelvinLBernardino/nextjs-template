@@ -12,8 +12,8 @@ export const deleteProduct = async (id: string) => {
   return response.data
 }
 
-export const updateProduct = async (id: string, data: ProductType) => {
-  const response = await api.put(`/product/${id}`, data)
+export const updateProduct = async (id: string, data: Partial<ProductType>) => {
+  const response = await api.patch(`/product/${id}`, data)
   return response.data
 }
 

@@ -1,20 +1,14 @@
 export interface ProductType {
   id: string
   name: string
-  category: number
-  price: string
-  stock: string
-}
-
-export interface ProductFormInputs {
-  name: string
-  category: number
+  category: string
   price: string
   stock: string
 }
 
 export interface ProductFormProps {
   type: 'create' | 'update'
-  editUser: ProductType | null
+  editRow: ProductType | null
   setControl: (value: number) => void
+  loadData: () => void
 }

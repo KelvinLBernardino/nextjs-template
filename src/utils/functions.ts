@@ -52,3 +52,18 @@ export const msgError = (error: unknown): { message: string } => {
     return { message: 'Ocorreu um erro inesperado!' }
   }
 }
+
+export const getDifferences = <T>(
+  obj1: Partial<T>,
+  obj2: Partial<T>,
+): Partial<T> => {
+  const differences: Partial<T> = {}
+
+  Object.keys(obj2).forEach((key) => {
+    if (obj1[key as keyof T] !== obj2[key as keyof T]) {
+      differences[key as keyof T] = obj2[key as keyof T]
+    }
+  })
+
+  return differences
+}

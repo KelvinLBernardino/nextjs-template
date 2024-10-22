@@ -12,8 +12,8 @@ export const deleteUser = async (id: string) => {
   return response.data
 }
 
-export const updateUser = async (id: string, data: UserType) => {
-  const response = await api.put(`/user/${id}`, data)
+export const updateUser = async (id: string, data: Partial<UserType>) => {
+  const response = await api.patch(`/user/${id}`, data)
   return response.data
 }
 
